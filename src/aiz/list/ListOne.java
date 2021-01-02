@@ -1,6 +1,7 @@
 package aiz.list;
 
-
+// Klasa ma być generyczną listą jednokierunkową
+// wykorzystującą obiekty klasy ElemOne jako element listy.
 public class ListOne implements IList {
     @Override
     public void addFirst(Object newData) {
