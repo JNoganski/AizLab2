@@ -8,16 +8,14 @@ public class ListOne implements IList {
     ElemOne first;
     ElemOne last;
 
-    @Override
     public void addFirst(Object newData) {
         ElemOne elemOne = new ElemOne(newData);
-        if(first == null){
-            first = elemOne;
-        }else {
-
-        }
+        elemOne.setData(newData);
+        elemOne.setNext(null);
+        elemOne.setNext(first);
+        first = elemOne;
     }
-    @Override
+
     public void addLast(Object newData) {
             ElemOne elemOne = new ElemOne(newData);
             elemOne.setNext(null);
@@ -35,7 +33,7 @@ public class ListOne implements IList {
 
     }
 
-    @Override
+
     public void addAtPosition(Object newData, int position) throws ListException {
 
     }

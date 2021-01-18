@@ -8,10 +8,11 @@ public class Main {
 
         ListOne listOne = new ListOne();
         listOne.addLast(5);
-        listOne.addLast("pozdrawiam");
-        listOne.addLast("JN");
-
+        listOne.addLast("test dodaniana koniec listy");
+        listOne.addLast("355");
+        listOne.addFirst("test dodania na początku");
         listOne.print();
+
 
     }
 }
