@@ -126,7 +126,14 @@ public class ListOne implements IList {
 
     @Override
     public boolean contains(Object data) {
-        return false;
+        ElemOne pointer = first;
+        for(int i=0;i<size();i++) {
+            if (pointer.getData() == data) {
+                return true;
+            } else {
+                pointer = pointer.getNext();
+            }
+        }return false;
     }
 
     @Override

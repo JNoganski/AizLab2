@@ -24,5 +24,15 @@ public class Main {
         listOne.removeLast();
         listOne.print();
         System.out.println("Integer 5 znajduje się na pozycji: "+listOne.find(5));
+        if(listOne.contains("test")){
+            System.out.println("lista zawiera daną: test");
+        }else{
+            System.out.println("lista nie zawiera danej: test");
+        }
+        if(listOne.contains("testFAlSE")){
+            System.out.println("lista zawiera daną: testFAlSE");
+        }else{
+            System.out.println("lista nie zawiera danej: testFAlSE");
+        }
     }
 }
