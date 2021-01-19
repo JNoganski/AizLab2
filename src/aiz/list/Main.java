@@ -1,11 +1,6 @@
 package aiz.list;
-
-
 public class Main {
-
-
     public static void main(String[] args) throws ListException {
-
         ListOne listOne = new ListOne();
         listOne.addLast(5);
         listOne.addLast("6");
@@ -25,5 +20,8 @@ public class Main {
         System.out.println("Dodaję string test na wskazanym adresie");
            listOne.addAtPosition("test", 2);
            listOne.print();
+        System.out.println("Usuwam ostatni element");
+        listOne.removeLast();
+        listOne.print();
     }
 }

@@ -32,8 +32,6 @@ public class ListOne implements IList {
     }
 
     public void addAtPosition(Object newData, int position) throws ListException {
-
-
         ElemOne elemOne = new ElemOne(newData);
         if (position < 0 || position > size()) {
             throw new ListException("Podana wartość position " +
@@ -69,12 +67,29 @@ public class ListOne implements IList {
 
     @Override
     public Object removeFirst() throws ListException {
-        first=first.getNext();
-        return null;
+        if (first == null) {
+            throw new ListException("Lista jest pusta, nie można usunąć elementu");
+        } else {
+            first = first.getNext();
+            return null;
+        }
     }
-
     @Override
     public Object removeLast() throws ListException {
+        if(first==null){
+            throw new ListException("Lista jest pusta, nie można dodać elementu");
+        }
+        else{
+            ElemOne drugaOstatnia = first;
+                while(drugaOstatnia.getNext().getNext()!=null){
+                drugaOstatnia = drugaOstatnia.getNext();
+                }
+                drugaOstatnia.getNext().setData(null);
+                drugaOstatnia.setNext(null);
+                last = drugaOstatnia;
+            }
+
+
         return null;
     }
 
