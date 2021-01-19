@@ -29,15 +29,29 @@ public class ListOne implements IList {
             pointer.setNext(elemOne);
             last = elemOne;
             }
-
-
     }
-
 
     public void addAtPosition(Object newData, int position) throws ListException {
 
-    }
 
+        ElemOne elemOne = new ElemOne(newData);
+        if (position < 0 || position > size()) {
+            throw new ListException("Podana wartość position " +
+                    "jest mniejsza od 0 lub większa od rozmiaru listy");
+        }
+        elemOne.setNext(null);
+
+        if (position == 0) {
+            addFirst(newData);
+        } else {
+            ElemOne pointer = first;
+            for (int i = 0; i < position; i++) {
+                pointer = pointer.getNext();
+            }
+            elemOne.setNext(pointer.getNext());
+            pointer.setNext(elemOne);
+        }
+    }
     @Override
     public int size() {
         return 0;
@@ -45,6 +59,7 @@ public class ListOne implements IList {
 
     @Override
     public Object removeFirst() throws ListException {
+        first=first.getNext();
         return null;
     }
 
@@ -55,6 +70,19 @@ public class ListOne implements IList {
 
     @Override
     public Object remove(int position) throws ListException {
+        if(position==0){
+            first=first.getNext();
+        }else{
+            ElemOne pointer = first;
+            ElemOne pointer2 = null;
+            for(int i=0;i<position-1;i++){
+                pointer= pointer.getNext();
+            }
+            pointer2 =pointer.getNext();
+            pointer.setNext(pointer2.getNext());
+            pointer2=null;
+        }
+
         return null;
     }
 
