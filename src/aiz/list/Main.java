@@ -23,5 +23,6 @@ public class Main {
         System.out.println("Usuwam ostatni element");
         listOne.removeLast();
         listOne.print();
+        System.out.println("Integer 5 znajduje się na pozycji: "+listOne.find(5));
     }
 }

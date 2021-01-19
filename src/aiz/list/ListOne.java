@@ -88,8 +88,6 @@ public class ListOne implements IList {
                 drugaOstatnia.setNext(null);
                 last = drugaOstatnia;
             }
-
-
         return null;
     }
 
@@ -113,7 +111,17 @@ public class ListOne implements IList {
 
     @Override
     public int find(Object dataToFind) {
-        return 0;
+        ElemOne pointer = first;
+        int position = 0;
+        while(pointer.getNext()!=null){
+            if (pointer.getData()==dataToFind){
+                return position;
+            }else {
+                position++;
+                pointer = pointer.getNext();
+            }
+        }
+        return -1;
     }
 
     @Override
