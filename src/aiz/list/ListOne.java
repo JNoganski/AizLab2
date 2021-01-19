@@ -45,7 +45,7 @@ public class ListOne implements IList {
             addFirst(newData);
         } else {
             ElemOne pointer = first;
-            for (int i = 0; i < position; i++) {
+            for (int i = 0; i < position-1; i++) {
                 pointer = pointer.getNext();
             }
             elemOne.setNext(pointer.getNext());
@@ -54,7 +54,17 @@ public class ListOne implements IList {
     }
     @Override
     public int size() {
-        return 0;
+        if (first == null) {
+            return 0;
+        } else {
+            ElemOne pointer = first;
+            int i = 1; //liczenie trzeba zacząć od jednego
+            while (pointer.getNext() != null) {
+                pointer = pointer.getNext();
+                i++;
+            }
+            return i;
+        }
     }
 
     @Override

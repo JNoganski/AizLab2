@@ -17,10 +17,13 @@ public class Main {
         listOne.removeFirst();
         listOne.print();
         System.out.println("usuwam z listy obiekt o wskazanym indeksie");
-        listOne.remove(3);
+        listOne.remove(2);
         listOne.print();
+        System.out.println("Rozmiar listy wynosi: "+listOne.size());
         //test dodania na pozycji
         //Dodaj size by sprawdzić czy działa
-          //  listOne.addAtPosition("test", 1);
+        System.out.println("Dodaję string test na wskazanym adresie");
+           listOne.addAtPosition("test", 2);
+           listOne.print();
     }
 }
